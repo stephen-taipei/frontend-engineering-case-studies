@@ -1,10 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   effect,
   inject,
   signal,
 } from '@angular/core';
+import { DemoColorModeStore } from '../color-mode/demo-color-mode.store';
 import {
   DEMO_THEMES,
   DemoLocale,
@@ -20,15 +22,22 @@ import { ThemeStylesheetLoader } from '../themes/theme-stylesheet.loader';
   imports: [ThemeSelectorComponent],
   templateUrl: './theme-platform.html',
   styleUrl: './theme-platform.scss',
-  providers: [DemoLocalizationStore, ThemeStylesheetLoader],
+  providers: [DemoColorModeStore, DemoLocalizationStore, ThemeStylesheetLoader],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemePlatform {
+  readonly #colorModeStore = inject(DemoColorModeStore);
   readonly #stylesheetLoader = inject(ThemeStylesheetLoader);
   readonly #localization = inject(DemoLocalizationStore);
 
   protected readonly appearances = THEME_APPEARANCES;
+  protected readonly colorMode = this.#colorModeStore.mode;
   protected readonly copy = this.#localization.copy;
+  protected readonly colorModeLabel = computed(() =>
+    this.colorMode() === 'dark'
+      ? this.copy().colorMode.toLight
+      : this.copy().colorMode.toDark,
+  );
   protected readonly locale = this.#localization.locale;
   protected readonly localeOptions = [
     { id: 'en', label: 'EN', lang: 'en' },
@@ -50,5 +59,9 @@ export class ThemePlatform {
 
   protected setLocale(locale: DemoLocale): void {
     this.#localization.setLocale(locale);
+  }
+
+  protected toggleColorMode(): void {
+    this.#colorModeStore.toggle();
   }
 }

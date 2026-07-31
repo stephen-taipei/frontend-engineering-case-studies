@@ -12,6 +12,10 @@ export const DEMO_COPY = {
     brandLabel: 'Frontend Architecture Case Study',
     sourceLabel: 'View source',
     languageLabel: 'Choose language',
+    colorMode: {
+      toDark: 'Switch to dark mode',
+      toLight: 'Switch to light mode',
+    },
     hero: {
       kicker: 'Angular · Nx · Interactive architecture proof',
       title: 'Complex themes,',
@@ -153,6 +157,10 @@ export const DEMO_COPY = {
     brandLabel: '前端架構案例',
     sourceLabel: '查看原始碼',
     languageLabel: '選擇語言',
+    colorMode: {
+      toDark: '切換深色模式',
+      toLight: '切換淺色模式',
+    },
     hero: {
       kicker: 'Angular · Nx · 可互動架構證明',
       title: '複雜多主題，',

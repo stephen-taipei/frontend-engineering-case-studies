@@ -157,24 +157,36 @@
   }
 }
 
-.topbar__link {
+.topbar__link,
+.topbar__icon {
   display: inline-flex;
   min-height: 2.5rem;
-  padding: 0 0.9rem;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   border: 1px solid var(--border);
   border-radius: 0.8rem;
   background: color-mix(in srgb, var(--surface) 86%, transparent);
   color: var(--text);
-  font-size: 0.8rem;
-  font-weight: 780;
-  text-decoration: none;
-
   &:hover {
     border-color: var(--border-strong);
     transform: translateY(-1px);
   }
+}
+
+.topbar__link {
+  padding: 0 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 780;
+  text-decoration: none;
+}
+
+.topbar__icon {
+  width: 2.5rem;
+  padding: 0;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .showcase {

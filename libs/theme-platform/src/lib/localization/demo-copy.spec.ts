@@ -11,6 +11,8 @@ describe('DEMO_COPY', () => {
       const copy = DEMO_COPY[locale];
 
       expect(copy.documentTitle.length).toBeGreaterThan(0);
+      expect(copy.colorMode.toDark.length).toBeGreaterThan(0);
+      expect(copy.colorMode.toLight.length).toBeGreaterThan(0);
       expect(Object.keys(copy.themes)).toEqual([...DEMO_THEMES]);
       expect(copy.items.map((item) => item.id)).toEqual(expectedItemIds);
 

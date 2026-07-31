@@ -14,7 +14,7 @@
 
 ## 執行 Demo
 
-直接開啟[線上 Demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/)，切換英文／繁體中文，或在本機執行：
+直接開啟[線上 Demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/)，獨立切換語系及深／淺色模式，或在本機執行：
 
 需求：Node.js 22.22.3+、24.15.0+ 或 26+，以及 pnpm 10+。
 

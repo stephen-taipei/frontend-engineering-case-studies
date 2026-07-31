@@ -1,8 +1,10 @@
 export const DEMO_THEMES = ['default', 'aurora', 'summit'] as const;
 export const DEMO_LOCALES = ['en', 'zh-TW'] as const;
+export const DEMO_COLOR_MODES = ['light', 'dark'] as const;
 
 export type DemoTheme = (typeof DEMO_THEMES)[number];
 export type DemoLocale = (typeof DEMO_LOCALES)[number];
+export type DemoColorMode = (typeof DEMO_COLOR_MODES)[number];
 
 export type ThemeDensity = 'comfortable' | 'compact';
 
@@ -49,6 +51,10 @@ export interface DemoCopy {
     readonly title: string;
   };
   readonly brandLabel: string;
+  readonly colorMode: {
+    readonly toDark: string;
+    readonly toLight: string;
+  };
   readonly documentTitle: string;
   readonly evidence: {
     readonly boundaryLabel: string;

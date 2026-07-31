@@ -34,6 +34,19 @@
       >
         {{ copy().sourceLabel }} <span aria-hidden="true">↗</span>
       </a>
+
+      <button
+        class="topbar__icon"
+        type="button"
+        data-color-mode-toggle
+        [attr.aria-label]="colorModeLabel()"
+        [attr.aria-pressed]="colorMode() === 'dark'"
+        (click)="toggleColorMode()"
+      >
+        <span aria-hidden="true"
+          >{{ colorMode() === 'dark' ? '☀' : '◐' }}</span
+        >
+      </button>
     </div>
   </div>
 </header>
@@ -43,6 +56,7 @@
   class="showcase"
   [attr.data-active-theme]="selectedTheme()"
   [attr.data-active-locale]="locale()"
+  [attr.data-color-mode]="colorMode()"
 >
   <article id="top" class="hero">
     <div class="hero__copy">
