@@ -1,11 +1,21 @@
 :root {
-  --demo-page: #fff7ed;
-  --demo-surface: #fffaf3;
-  --demo-text: #3b1d2a;
-  --demo-muted: #81586a;
-  --demo-accent: #db2777;
-  --demo-on-accent: #ffffff;
-  --demo-border: #f7c7d7;
-  --demo-radius: 32px;
-  --demo-shadow: 0 20px 60px rgb(190 24 93 / 16%);
+  color-scheme: light;
+  --demo-page: #fff7ea;
+  --demo-grid: rgb(100 55 35 / 5.5%);
+  --demo-surface: #fffaf1;
+  --demo-surface-2: #f6e7d5;
+  --demo-text: #3b2620;
+  --demo-muted: #745c52;
+  --demo-faint: #9a7f73;
+  --demo-accent: #c65367;
+  --demo-accent-deep: #9e334b;
+  --demo-accent-soft: #f7dce0;
+  --demo-highlight: #f2c94c;
+  --demo-border: rgb(112 66 49 / 17%);
+  --demo-border-strong: rgb(112 66 49 / 34%);
+  --demo-inverse: #4a2f2b;
+  --demo-inverse-text: #fff7ea;
+  --demo-radius: 30px;
+  --demo-shadow: 0 24px 70px rgb(112 66 49 / 16%);
+  --demo-shadow-sm: 0 10px 30px rgb(112 66 49 / 12%);
 }

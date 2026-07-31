@@ -14,7 +14,7 @@ Sanitized Angular/Nx architecture and web performance case studies with runnable
 
 ## Run the demo
 
-Open the [hosted demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/), or run it locally:
+Open the [hosted demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/), switch between English and Traditional Chinese, or run it locally:
 
 Requirements: Node.js 22.22.3+, 24.15.0+, or 26+ and pnpm 10+.
 

@@ -4,7 +4,11 @@ import {
   input,
   output,
 } from '@angular/core';
-import { ShowcaseItem, ThemeAppearance } from '../contracts/theme-contracts';
+import {
+  ShowcaseItem,
+  ThemeAppearance,
+  ThemeContent,
+} from '../contracts/theme-contracts';
 
 @Component({
   selector: 'case-study-theme-card-core',
@@ -14,6 +18,7 @@ import { ShowcaseItem, ThemeAppearance } from '../contracts/theme-contracts';
 })
 export class ThemeCardCoreComponent {
   readonly appearance = input.required<ThemeAppearance>();
+  readonly content = input.required<ThemeContent>();
   readonly items = input.required<readonly ShowcaseItem[]>();
   readonly selectedId = input<string | null>(null);
 

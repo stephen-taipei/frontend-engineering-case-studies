@@ -1,58 +1,178 @@
-<main class="showcase" [attr.data-active-theme]="selectedTheme()">
-  <section class="showcase__intro">
-    <div>
-      <p class="showcase__kicker">Angular · Nx · public case study</p>
-      <h1>Config-driven multi-theme architecture</h1>
-      <p>
-        Switch themes to see one shared rendering contract reuse the same data,
-        behavior, and DOM while each leaf owns complete appearance config.
-      </p>
+<a class="skip-link" href="#main-content">{{ copy().skipLink }}</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="#top" [attr.aria-label]="copy().homeLabel">
+      <span class="brand__mark" aria-hidden="true">F/A</span>
+      <span class="brand__copy">{{ copy().brandLabel }}</span>
+    </a>
+
+    <div class="topbar__actions">
+      <div
+        class="language-switcher"
+        role="group"
+        [attr.aria-label]="copy().languageLabel"
+      >
+        @for (option of localeOptions; track option.id) {
+        <button
+          type="button"
+          data-locale-option
+          [attr.lang]="option.lang"
+          [attr.aria-pressed]="locale() === option.id"
+          (click)="setLocale(option.id)"
+        >
+          {{ option.label }}
+        </button>
+        }
+      </div>
+
+      <a
+        class="topbar__link"
+        href="https://github.com/stephen-taipei/frontend-engineering-case-studies"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {{ copy().sourceLabel }} <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main
+  id="main-content"
+  class="showcase"
+  [attr.data-active-theme]="selectedTheme()"
+  [attr.data-active-locale]="locale()"
+>
+  <article id="top" class="hero">
+    <div class="hero__copy">
+      <p class="eyebrow">{{ copy().hero.kicker }}</p>
+      <h1>
+        {{ copy().hero.title }}<br />
+        <span class="hero__highlight">{{ copy().hero.titleHighlight }}</span>
+      </h1>
+      <p class="hero__lead">{{ copy().hero.lead }}</p>
+
+      <div class="meta-chips" [attr.aria-label]="copy().hero.chipsLabel">
+        @for (chip of copy().hero.chips; track chip) {
+        <span class="chip">{{ chip }}</span>
+        }
+      </div>
     </div>
 
-    <aside aria-label="Evidence boundary">
-      <strong>Public proof boundary</strong>
-      <span>
-        This synthetic demo proves the mechanism. Historical production metrics
-        are documented separately and are not presented as reproduced here.
-      </span>
+    <aside class="hero-map" [attr.aria-label]="copy().architecture.title">
+      <span class="hero-map__label">{{ copy().architecture.mapLabel }}</span>
+      <div class="hero-map__track">
+        @for (layer of copy().architecture.layers; track layer.key; let last =
+        $last) {
+        <div class="hero-map__node">
+          <code>{{ layer.key }}</code>
+          <span>{{ layer.description }}</span>
+        </div>
+        @if (!last) {
+        <div class="hero-map__arrow" aria-hidden="true">↓</div>
+        } }
+      </div>
+    </aside>
+  </article>
+
+  <section id="demo" class="content-section">
+    <header class="section-head">
+      <div>
+        <p class="section-kicker">{{ copy().themeSection.kicker }}</p>
+        <h2>{{ copy().themeSection.title }}</h2>
+      </div>
+      <p class="section-summary">{{ copy().themeSection.summary }}</p>
+    </header>
+
+    <nav
+      class="theme-switcher"
+      [attr.aria-label]="copy().themeSection.switcherLabel"
+    >
+      @for (theme of themes; track theme; let index = $index) {
+      <button
+        type="button"
+        data-theme-option
+        [class.is-active]="selectedTheme() === theme"
+        [attr.aria-pressed]="selectedTheme() === theme"
+        (click)="selectTheme(theme)"
+      >
+        <small>0{{ index + 1 }}</small>
+        <span>{{ copy().themes[theme].label }}</span>
+        <code>{{ theme }}</code>
+      </button>
+      }
+    </nav>
+
+    <case-study-theme-selector [theme]="selectedTheme()" />
+  </section>
+
+  <section class="content-section architecture-section">
+    <header class="section-head">
+      <div>
+        <p class="section-kicker">{{ copy().architecture.kicker }}</p>
+        <h2>{{ copy().architecture.title }}</h2>
+      </div>
+      <p class="section-summary">{{ copy().architecture.summary }}</p>
+    </header>
+
+    <div class="role-grid">
+      @for (layer of copy().architecture.layers; track layer.key; let index =
+      $index) {
+      <article class="role-card card">
+        <span class="role-card__index">0{{ index + 1 }}</span>
+        <span class="layer-tag">{{ layer.key }}</span>
+        <h3>{{ layer.label }}</h3>
+        <p>{{ layer.description }}</p>
+      </article>
+      }
+    </div>
+
+    <article class="flow-card card">
+      <div class="flow-card__label">
+        <small>{{ copy().architecture.flowLabel }}</small>
+        <strong>{{ copy().architecture.title }}</strong>
+      </div>
+      <div class="flow-card__lines">
+        <code>{{ copy().architecture.renderingFlow }}</code>
+        <code>{{ copy().architecture.behaviorFlow }}</code>
+      </div>
+    </article>
+  </section>
+
+  <section class="content-section evidence-section">
+    <header class="section-head">
+      <div>
+        <p class="section-kicker">{{ copy().evidence.kicker }}</p>
+        <h2>{{ copy().evidence.title }}</h2>
+      </div>
+      <p class="section-summary">{{ copy().evidence.summary }}</p>
+    </header>
+
+    <div class="metrics-grid">
+      @for (metric of copy().evidence.metrics; track metric.value) {
+      <article class="metric-card card">
+        <strong>{{ metric.value }}</strong>
+        <h3>{{ metric.label }}</h3>
+        <p>{{ metric.context }}</p>
+      </article>
+      }
+    </div>
+
+    <aside class="boundary-card">
+      <span>{{ copy().evidence.boundaryLabel }}</span>
+      <p>{{ copy().evidence.boundaryText }}</p>
     </aside>
   </section>
 
-  <nav class="theme-switcher" aria-label="Demo themes">
-    @for (theme of themes; track theme) {
-    <button
-      type="button"
-      data-theme-option
-      [class.is-active]="selectedTheme() === theme"
-      [attr.aria-pressed]="selectedTheme() === theme"
-      (click)="selectTheme(theme)"
+  <footer class="footer">
+    <span>{{ copy().footer }}</span>
+    <a
+      href="https://github.com/stephen-taipei/frontend-engineering-case-studies"
+      target="_blank"
+      rel="noreferrer"
     >
-      <span>{{ appearances[theme].label }}</span>
-      <small>{{ theme }}</small>
-    </button>
-    }
-  </nav>
-
-  <case-study-theme-selector [theme]="selectedTheme()" />
-
-  <section class="showcase__architecture" aria-labelledby="architecture-title">
-    <div>
-      <p class="showcase__kicker">Dependency direction</p>
-      <h2 id="architecture-title">selector → leaf → view → pure core</h2>
-    </div>
-    <dl>
-      <div>
-        <dt>Core</dt>
-        <dd>Typed rendering inputs and intent outputs only.</dd>
-      </div>
-      <div>
-        <dt>View</dt>
-        <dd>Shared data, facade, and event wiring.</dd>
-      </div>
-      <div>
-        <dt>Leaf</dt>
-        <dd>Complete config and stylesheet ownership.</dd>
-      </div>
-    </dl>
-  </section>
+      GitHub ↗
+    </a>
+  </footer>
 </main>

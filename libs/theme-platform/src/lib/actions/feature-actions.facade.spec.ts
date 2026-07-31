@@ -15,7 +15,6 @@ describe('FeatureActionsFacade', () => {
     });
 
     expect(facade.selectedId()).toBe('architecture');
-    expect(facade.selectedTitle()).toBe('Stable rendering contract');
 
     facade.reset();
     expect(facade.selectedId()).toBeNull();

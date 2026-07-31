@@ -4,9 +4,9 @@
   [attr.data-rendering-contract]="appearance().id"
 >
   <header class="theme-card__header">
-    <span class="theme-card__eyebrow">{{ appearance().eyebrow }}</span>
-    <h2>{{ appearance().label }}</h2>
-    <p>{{ appearance().description }}</p>
+    <span class="theme-card__eyebrow">{{ content().eyebrow }}</span>
+    <h2>{{ content().label }}</h2>
+    <p>{{ content().description }}</p>
   </header>
 
   <div class="theme-card__grid">
@@ -31,7 +31,7 @@
       [disabled]="selectedId() === null"
       (click)="selectionCleared.emit()"
     >
-      {{ appearance().ctaLabel }}
+      {{ content().ctaLabel }}
     </button>
   </footer>
 </article>
