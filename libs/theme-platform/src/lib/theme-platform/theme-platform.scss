@@ -14,6 +14,7 @@
   --border-strong: var(--demo-border-strong, rgb(24 50 47 / 32%));
   --inverse: var(--demo-inverse, #19322f);
   --inverse-text: var(--demo-inverse-text, #f5f2e9);
+  --inverse-accent: var(--demo-inverse-accent, #b8dc65);
   --shadow: var(--demo-shadow, 0 24px 70px rgb(39 51 43 / 13%));
   --shadow-sm: var(--demo-shadow-sm, 0 10px 30px rgb(39 51 43 / 10%));
   --mono: 'SFMono-Regular', 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
@@ -325,14 +326,14 @@ h3 {
     right: -4.5rem;
     width: 13.5rem;
     height: 13.5rem;
-    border: 1px solid color-mix(in srgb, var(--highlight) 44%, transparent);
+    border: 1px solid color-mix(in srgb, var(--inverse-accent) 44%, transparent);
     border-radius: 50%;
     content: '';
   }
 }
 
 .hero-map__label {
-  color: var(--highlight);
+  color: var(--inverse-accent);
   font-family: var(--mono);
   font-size: 0.65rem;
   font-weight: 900;
@@ -352,13 +353,13 @@ h3 {
   padding: 0.65rem 0.85rem;
   align-items: center;
   gap: 0.7rem;
-  border: 1px solid rgb(255 255 255 / 13%);
+  border: 1px solid color-mix(in srgb, var(--inverse-text) 13%, transparent);
   border-radius: 0.8rem;
-  background: rgb(255 255 255 / 8%);
+  background: color-mix(in srgb, var(--inverse-text) 8%, transparent);
   grid-template-columns: 5.2rem 1fr;
 
   code {
-    color: var(--highlight);
+    color: var(--inverse-accent);
     font-size: 0.68rem;
     font-weight: 800;
   }
@@ -373,7 +374,7 @@ h3 {
 .hero-map__arrow {
   height: 0.7rem;
   padding-left: 2.3rem;
-  color: var(--highlight);
+  color: var(--inverse-accent);
   font-family: var(--mono);
   line-height: 0.7rem;
 }
@@ -601,8 +602,8 @@ h3 {
   span {
     padding: 0.35rem 0.6rem;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--highlight) 16%, transparent);
-    color: var(--highlight);
+    background: color-mix(in srgb, var(--inverse-accent) 16%, transparent);
+    color: var(--inverse-accent);
     font-family: var(--mono);
     font-size: 0.65rem;
     font-weight: 900;

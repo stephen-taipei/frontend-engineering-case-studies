@@ -15,6 +15,7 @@
   --demo-border-strong: rgb(112 66 49 / 34%);
   --demo-inverse: #4a2f2b;
   --demo-inverse-text: #fff7ea;
+  --demo-inverse-accent: #f2c94c;
   --demo-radius: 30px;
   --demo-shadow: 0 24px 70px rgb(112 66 49 / 16%);
   --demo-shadow-sm: 0 10px 30px rgb(112 66 49 / 12%);
@@ -37,6 +38,7 @@
   --demo-border-strong: rgb(255 229 220 / 31%);
   --demo-inverse: #ffe8dc;
   --demo-inverse-text: #2b1719;
+  --demo-inverse-accent: #8f3048;
   --demo-shadow: 0 24px 70px rgb(0 0 0 / 36%);
   --demo-shadow-sm: 0 10px 30px rgb(0 0 0 / 26%);
 }
