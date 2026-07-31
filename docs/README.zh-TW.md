@@ -14,7 +14,7 @@
 
 ## 執行 Demo
 
-需求：Node.js 22+、pnpm 10+。
+需求：Node.js 22.22.3+、24.15.0+ 或 26+，以及 pnpm 10+。
 
 ```sh
 pnpm install --frozen-lockfile

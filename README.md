@@ -14,7 +14,7 @@ Sanitized Angular/Nx architecture and web performance case studies with runnable
 
 ## Run the demo
 
-Requirements: Node.js 22+ and pnpm 10+.
+Requirements: Node.js 22.22.3+, 24.15.0+, or 26+ and pnpm 10+.
 
 ```sh
 pnpm install --frozen-lockfile

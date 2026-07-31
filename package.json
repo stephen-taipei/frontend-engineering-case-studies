@@ -2,6 +2,9 @@
   "name": "@frontend-engineering-case-studies/source",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
   "scripts": {
     "build": "nx run-many -t build",
     "check": "pnpm verify:public && pnpm lint && pnpm test && pnpm build",
