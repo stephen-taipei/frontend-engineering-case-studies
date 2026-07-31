@@ -1,0 +1,37 @@
+<article
+  class="theme-card"
+  [attr.data-density]="appearance().density"
+  [attr.data-rendering-contract]="appearance().id"
+>
+  <header class="theme-card__header">
+    <span class="theme-card__eyebrow">{{ appearance().eyebrow }}</span>
+    <h2>{{ appearance().label }}</h2>
+    <p>{{ appearance().description }}</p>
+  </header>
+
+  <div class="theme-card__grid">
+    @for (item of items(); track item.id) {
+    <button
+      type="button"
+      class="theme-card__item"
+      [class.is-selected]="selectedId() === item.id"
+      [attr.aria-pressed]="selectedId() === item.id"
+      (click)="itemSelected.emit(item)"
+    >
+      <span>{{ item.title }}</span>
+      <small>{{ item.description }}</small>
+    </button>
+    }
+  </div>
+
+  <footer>
+    <button
+      type="button"
+      class="theme-card__cta"
+      [disabled]="selectedId() === null"
+      (click)="selectionCleared.emit()"
+    >
+      {{ appearance().ctaLabel }}
+    </button>
+  </footer>
+</article>

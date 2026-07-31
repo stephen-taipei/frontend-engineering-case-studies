@@ -1,0 +1,58 @@
+<main class="showcase" [attr.data-active-theme]="selectedTheme()">
+  <section class="showcase__intro">
+    <div>
+      <p class="showcase__kicker">Angular · Nx · public case study</p>
+      <h1>Config-driven multi-theme architecture</h1>
+      <p>
+        Switch themes to see one shared rendering contract reuse the same data,
+        behavior, and DOM while each leaf owns complete appearance config.
+      </p>
+    </div>
+
+    <aside aria-label="Evidence boundary">
+      <strong>Public proof boundary</strong>
+      <span>
+        This synthetic demo proves the mechanism. Historical production metrics
+        are documented separately and are not presented as reproduced here.
+      </span>
+    </aside>
+  </section>
+
+  <nav class="theme-switcher" aria-label="Demo themes">
+    @for (theme of themes; track theme) {
+    <button
+      type="button"
+      data-theme-option
+      [class.is-active]="selectedTheme() === theme"
+      [attr.aria-pressed]="selectedTheme() === theme"
+      (click)="selectTheme(theme)"
+    >
+      <span>{{ appearances[theme].label }}</span>
+      <small>{{ theme }}</small>
+    </button>
+    }
+  </nav>
+
+  <case-study-theme-selector [theme]="selectedTheme()" />
+
+  <section class="showcase__architecture" aria-labelledby="architecture-title">
+    <div>
+      <p class="showcase__kicker">Dependency direction</p>
+      <h2 id="architecture-title">selector → leaf → view → pure core</h2>
+    </div>
+    <dl>
+      <div>
+        <dt>Core</dt>
+        <dd>Typed rendering inputs and intent outputs only.</dd>
+      </div>
+      <div>
+        <dt>View</dt>
+        <dd>Shared data, facade, and event wiring.</dd>
+      </div>
+      <div>
+        <dt>Leaf</dt>
+        <dd>Complete config and stylesheet ownership.</dd>
+      </div>
+    </dl>
+  </section>
+</main>

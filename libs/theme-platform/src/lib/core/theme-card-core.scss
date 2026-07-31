@@ -1,0 +1,115 @@
+:host {
+  display: block;
+}
+
+.theme-card {
+  border: 1px solid var(--demo-border, #d9e0ea);
+  border-radius: var(--demo-radius, 20px);
+  background: var(--demo-surface, #ffffff);
+  box-shadow: var(--demo-shadow, 0 16px 48px rgb(32 48 80 / 12%));
+  color: var(--demo-text, #172033);
+  padding: 2rem;
+  transition:
+    background 180ms ease,
+    border-radius 180ms ease,
+    color 180ms ease;
+}
+
+.theme-card[data-density='compact'] {
+  padding: 1.5rem;
+}
+
+.theme-card__header {
+  max-width: 44rem;
+
+  h2 {
+    margin: 0.5rem 0 0;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.08;
+  }
+
+  p {
+    margin: 1rem 0 0;
+    color: var(--demo-muted, #596579);
+    line-height: 1.7;
+  }
+}
+
+.theme-card__eyebrow {
+  color: var(--demo-accent, #4f46e5);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theme-card__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.875rem;
+  margin: 2rem 0;
+}
+
+.theme-card__item {
+  display: grid;
+  gap: 0.55rem;
+  min-height: 9rem;
+  padding: 1.25rem;
+  border: 1px solid var(--demo-border, #d9e0ea);
+  border-radius: calc(var(--demo-radius, 20px) * 0.65);
+  background: color-mix(
+    in srgb,
+    var(--demo-surface, #ffffff) 88%,
+    var(--demo-accent, #4f46e5)
+  );
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+
+  span {
+    font-weight: 700;
+  }
+
+  small {
+    color: var(--demo-muted, #596579);
+    line-height: 1.55;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &.is-selected {
+    border-color: var(--demo-accent, #4f46e5);
+    outline: none;
+    transform: translateY(-2px);
+  }
+}
+
+.theme-card__cta {
+  min-height: 2.75rem;
+  padding: 0.65rem 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--demo-accent, #4f46e5);
+  color: var(--demo-on-accent, #ffffff);
+  cursor: pointer;
+  font-weight: 700;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 760px) {
+  .theme-card {
+    padding: 1.25rem;
+  }
+
+  .theme-card__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,11 @@
+:root {
+  --demo-page: #eef2ff;
+  --demo-surface: #ffffff;
+  --demo-text: #172033;
+  --demo-muted: #596579;
+  --demo-accent: #4f46e5;
+  --demo-on-accent: #ffffff;
+  --demo-border: #d9e0ea;
+  --demo-radius: 20px;
+  --demo-shadow: 0 16px 48px rgb(32 48 80 / 12%);
+}

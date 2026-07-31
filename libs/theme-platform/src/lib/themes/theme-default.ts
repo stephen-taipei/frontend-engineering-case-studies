@@ -1,0 +1,14 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ThemeCardViewComponent } from '../view/theme-card-view';
+import { THEME_APPEARANCES } from './theme-config';
+
+@Component({
+  selector: 'case-study-theme-default',
+  imports: [ThemeCardViewComponent],
+  template:
+    '<case-study-theme-card-view [appearance]="appearance" data-theme-leaf="default" />',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ThemeDefaultComponent {
+  protected readonly appearance = THEME_APPEARANCES.default;
+}
