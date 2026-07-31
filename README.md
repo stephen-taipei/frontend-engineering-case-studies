@@ -2,7 +2,7 @@
 
 Sanitized Angular/Nx architecture and web performance case studies with runnable demos and explicit evidence boundaries.
 
-[繁體中文](docs/README.zh-TW.md)
+[Live demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/) · [繁體中文](docs/README.zh-TW.md)
 
 ## 30–60 second brief
 
@@ -13,6 +13,8 @@ Sanitized Angular/Nx architecture and web performance case studies with runnable
 - **Boundary:** The public demo is original and synthetic. It contains no production source, company names, business logic, domains, or assets, and it does not claim to reproduce the historical bundle sizes.
 
 ## Run the demo
+
+Open the [hosted demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/), or run it locally:
 
 Requirements: Node.js 22.22.3+, 24.15.0+, or 26+ and pnpm 10+.
 

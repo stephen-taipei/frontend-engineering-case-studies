@@ -2,7 +2,7 @@
 
 以可執行 Demo 呈現去識別化的 Angular／Nx 架構與 Web 效能案例，並明確揭露證據與宣稱邊界。
 
-[English](../README.md)
+[線上 Demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/) · [English](../README.md)
 
 ## 30–60 秒摘要
 
@@ -13,6 +13,8 @@
 - **邊界：** 公開 Demo 為原創的 synthetic implementation，不含 production 原始碼、公司名稱、商業邏輯、網域或素材，也不宣稱重現歷史 bundle 大小。
 
 ## 執行 Demo
+
+直接開啟[線上 Demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/)，或在本機執行：
 
 需求：Node.js 22.22.3+、24.15.0+ 或 26+，以及 pnpm 10+。
 

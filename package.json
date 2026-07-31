@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "nx run-many -t build",
+    "build:pages": "nx build theme-demo --configuration=pages",
     "check": "pnpm verify:public && pnpm lint && pnpm test && pnpm build",
     "format:check": "nx format:check",
     "lint": "nx run-many -t lint",
