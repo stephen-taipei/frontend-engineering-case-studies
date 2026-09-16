@@ -151,7 +151,7 @@ export const DEMO_COPY = {
     htmlLang: 'zh-Hant',
     documentTitle: 'Config 驅動前端架構 · Angular／Nx 案例',
     metaDescription:
-      '以互動式 Angular／Nx 案例展示 Config 驅動多主題、明確責任邊界與 CSS 按需載入。',
+      '以互動式 Angular／Nx 案例展示 Config 驅動多主題、明確責任邊界與 CSS 依需求載入。',
     skipLink: '跳到主要內容',
     homeLabel: '回到頁面頂端',
     brandLabel: '前端架構案例',
@@ -170,7 +170,7 @@ export const DEMO_COPY = {
         '3 個虛構主題',
         '型別化契約',
         'family completeness',
-        'CSS 按需載入',
+        'CSS 依需求載入',
       ],
       chipsLabel: 'Demo 重點',
     },
@@ -273,7 +273,7 @@ export const DEMO_COPY = {
         },
         {
           value: '136',
-          label: '份 production 主題 CSS 改為按需載入',
+          label: '份 production 主題 CSS 改為依需求載入',
           context: '公開 Demo 僅使用三份小型 synthetic stylesheets。',
         },
         {

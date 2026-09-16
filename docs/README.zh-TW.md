@@ -8,8 +8,8 @@
 
 - **問題：** 大型前端平台需支援 100+ 主題與多版型，且客製邏輯不能持續滲入共用元件。
 - **架構：** 以 Config 驅動的 `core / view / default / theme` family，搭配明確的 `facade / service` 邊界，讓每個主題成為完整且可測試的 leaf。
-- **Production 成果：** 一個具代表性的完整主題 leaf 精簡至 23 行。另一項效能改造則將 136 份主題 CSS 改為按需載入，使單次主題資源由約 2.4 MB 降至 17 KB，約降低 99%。
-- **公開證明：** 本 repository 以三個虛構主題重新實作架構機制，包含型別契約、執行期切換、family-completeness 測試、CSS 按需載入與 CI。
+- **Production 成果：** 一個具代表性的完整主題 leaf 精簡至 23 行。另一項效能改造則將 136 份主題 CSS 改為依需求載入，使單次主題資源由約 2.4 MB 降至 17 KB，約降低 99%。
+- **公開證明：** 本 repository 以三個虛構主題重新實作架構機制，包含型別契約、執行期切換、family-completeness 測試、CSS 依需求載入與 CI。
 - **邊界：** 公開 Demo 為原創的 synthetic implementation，不含 production 原始碼、公司名稱、商業邏輯、網域或素材，也不宣稱重現歷史 bundle 大小。
 
 ## 執行 Demo
@@ -45,7 +45,7 @@ flowchart LR
   View --> Core["Pure core UI"]
   Data["Data service"] --> View
   View --> Facade["Actions facade"]
-  Config --> Loader["按需 stylesheet loader"]
+  Config --> Loader["依需求 stylesheet loader"]
 ```
 
 各層邊界刻意保持清楚：
@@ -59,7 +59,7 @@ flowchart LR
 ## 案例文件
 
 1. [Config 驅動的多主題架構](case-studies/config-driven-multi-theme.zh-TW.md)
-2. [主題 CSS 按需載入與 Web 效能實測](case-studies/on-demand-theme-css.zh-TW.md)
+2. [主題 CSS 依需求載入與 Web 效能實測](case-studies/on-demand-theme-css.zh-TW.md)
 3. [證據邊界與宣稱稽核](evidence-boundaries.zh-TW.md)
 
 ## Repository 結構
@@ -83,7 +83,7 @@ docs/                   雙語案例與證據邊界
 - Angular、TypeScript、Nx、Signals 與 `OnPush` 的 hands-on 能力
 - Config 驅動元件架構與清楚的相依邊界
 - 可測試的 theme-family completeness
-- 執行期主題切換與單一 CSS 按需載入
+- 執行期主題切換與單一 CSS 依需求載入
 - 將 production 成果與公開 Demo 證明分開陳述的 evidence-aware 技術溝通
 
 ## 不宣稱的內容

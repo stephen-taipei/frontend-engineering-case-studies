@@ -1,4 +1,4 @@
-# 案例：主題 CSS 按需載入與 Web 效能實測
+# 案例：主題 CSS 依需求載入與 Web 效能實測
 
 [English](on-demand-theme-css.md)
 
@@ -41,7 +41,7 @@ sequenceDiagram
 
 | 指標                                |                 Before |                 After |       變化 |
 | ----------------------------------- | ---------------------: | --------------------: | ---------: |
-| Theme CSS 載入                      | 聚合 136 份 stylesheet | Active theme 按需載入 |   架構改造 |
+| Theme CSS 載入                      | 聚合 136 份 stylesheet | Active theme 依需求載入 |   架構改造 |
 | 單次主題資源                        |              約 2.4 MB |                 17 KB | 約降低 99% |
 | 關鍵實測頁面 Lighthouse Performance |                    50+ |                   90+ |       提升 |
 
