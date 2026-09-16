@@ -73,7 +73,7 @@ satisfies Record<DemoTheme, ThemeAppearance>
 
 ## Before／after
 
-| 面向                       | Before                            | After                                               |
+| 比較項目                   | Before                            | After                                               |
 | -------------------------- | --------------------------------- | --------------------------------------------------- |
 | 客製模型                   | 分散的條件與 override             | 每個 theme leaf 一份完整 typed config               |
 | 共用渲染                   | 混合 theme 與協調職責             | Pure core，只保留 required inputs 與 output intents |
