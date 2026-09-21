@@ -1,20 +1,22 @@
 # Frontend Engineering Case Studies
 
+[English](./README.md) · [繁體中文](./README.zh-TW.md) · [简体中文](./README.zh-CN.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [ไทย](./README.th.md)
+
 Sanitized Angular/Nx architecture and web performance case studies with runnable demos and explicit evidence boundaries.
 
-[Live demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/) · [繁體中文](docs/README.zh-TW.md)
+[Live demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/)
 
 ## 30–60 second brief
 
 - **Problem:** A large frontend platform had to support 100+ themes and multiple layouts without allowing customization logic to spread through shared components.
 - **Architecture:** A config-driven `core / view / default / theme` family with explicit `facade / service` boundaries turns each theme into a complete, testable leaf.
-- **Production outcomes:** A representative complete theme leaf was reduced to 23 lines. Separately, 136 theme stylesheets were changed to on-demand loading, reducing one theme request from about 2.4 MB to 17 KB (about 99%).
+- **Production outcomes:** A representative complete theme leaf was reduced to 23 lines. Separately, 136 theme stylesheets were changed to on-demand loading, reducing one theme request from about 2.4 MB to 17 KB, about 99%.
 - **Public proof:** This repository reimplements the architectural mechanism with three fictional themes. It includes typed contracts, runtime switching, family-completeness tests, on-demand CSS, and CI.
 - **Boundary:** The public demo is original and synthetic. It contains no production source, company names, business logic, domains, or assets, and it does not claim to reproduce the historical bundle sizes.
 
 ## Run the demo
 
-Open the [hosted demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/), switch language and light/dark mode independently, or run it locally:
+Open the [hosted demo](https://stephen-taipei.github.io/frontend-engineering-case-studies/), switch language and light/dark mode independently, or run it locally.
 
 Requirements: Node.js 22.22.3+, 24.15.0+, or 26+ and pnpm 10+.
 
@@ -52,8 +54,8 @@ The boundaries are deliberate:
 
 - `core` accepts required, view-ready inputs and emits UI intents. It does not import routing, API DTOs, theme identifiers, or brand assets.
 - `view` coordinates the core with a data service and actions facade.
-- every theme leaf provides a complete typed config and uses the same shared view contract;
-- a selector makes family membership explicit; completeness tests fail if a declared theme is missing config, selector coverage, or a renderable leaf;
+- every theme leaf provides a complete typed config and uses the same shared view contract.
+- a selector makes family membership explicit. Completeness tests fail if a declared theme is missing config, selector coverage, or a renderable leaf.
 - one stylesheet loader owns the active theme `<link>`, so inactive theme CSS is not requested.
 
 ## Case studies
@@ -75,7 +77,7 @@ libs/theme-platform/
   src/lib/data/         Data service boundary
   src/lib/actions/      Actions facade boundary
   src/lib/themes/       Config, selector, leaves, and CSS loader
-docs/                   Bilingual case studies and evidence boundaries
+docs/                   Case studies and evidence boundaries
 ```
 
 ## What this demonstrates
@@ -84,7 +86,7 @@ docs/                   Bilingual case studies and evidence boundaries
 - Config-driven component architecture and explicit dependency boundaries
 - Testable theme-family completeness
 - Runtime theme switching with one on-demand stylesheet
-- Evidence-aware technical communication: production results and public-demo proof are kept separate
+- Evidence-aware technical communication where production results and public-demo proof are kept separate
 
 ## What is not claimed
 
